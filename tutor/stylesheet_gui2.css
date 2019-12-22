@@ -1,0 +1,110 @@
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+.header {
+    font-size: 36pt;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: #336699;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    display: -webkit-flex; 
+    -webkit-justify-content: center; 
+    display: flex;
+    justify-content: center;
+	text-align: center;
+}
+
+.content{
+    /*padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 6px;*/
+    justify-content: center;
+	text-align: center;
+	color: #336699;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; 
+    flex-wrap: wrap;
+}
+
+.contentHeader{
+    background-color: #336699;
+    color: #ffffff;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    justify-content: center;
+	text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+
+.contentli{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.videoChat{
+    border-style: solid;
+}
+
+.textbox{
+    border-style: solid;
+}
+
+.contentre{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.textchat{
+    border-style: solid;
+     
+}
+
+.terminal{
+    border-style: solid;
+
+}
+
+.footer{
+     background-color: #f1f1f1;
+     font-size: 20px;
+     color: #336699;
+     display: flex;
+    justify-content: center;
+	text-align: center;
+	padding: 15 px;
+}
+
+/* Phones: */
+.phone-12-cols {width: 100%;}
+
+/* Desktop: */
+@media only screen and (min-width: 750px) {
+    .desktop-1-cols {width: 8.33%;}
+    .desktop-2-cols {width: 16.66%;}
+    .desktop-3-cols {width: 25%;}
+    .desktop-4-cols {width: 33.33%;}
+    .desktop-5-cols {width: 41.66%;}
+    .desktop-6-cols {width: 50%;}
+    .desktop-7-cols {width: 58.33%;}
+    .desktop-8-cols {width: 66.66%;}
+    .desktop-9-cols {width: 75%;}
+    .desktop-10-cols {width: 83.33%;}
+    .desktop-11-cols {width: 91.66%;}
+    .desktop-12-cols {width: 100%;}
+}
