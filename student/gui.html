@@ -9,18 +9,19 @@
 <div class="header">OnlineTutor</div>
 <div class="content">
     <div class="contentHeader desktop-12-cols phone-12-cols">
-        <div class="tutor desktop-4-cols phone-12-cols">
+        <div class="tutor desktop-5-cols phone-12-cols">
             <p>Your Tutor: Rudolph Random</p>
         </div>
-        <div class="leave desktop-4-cols phone-12-cols">
-            <button type="button" onclick = "location.href='starRating.html'" target="_self">leave</button> 
+        <div class="leaveButton desktop-2-cols phone-12-cols"  onclick = "location.href='starRating.html'" target="_self">
+            <img src="https://image.flaticon.com/icons/png/512/70/70226.png" alt="leave" width="80" height="65" hspace="15">
+            <p>quit session</p> 
         </div>
-        <div class="call desktop-2-cols phone-12-cols">
-            <button type="button">call Tutor</button> 
-        </div>
-        <div class="screensharing desktop-2-cols phone-12-cols">
-            <button type="button">start screensharing</button> 
-        </div>
+        <div class="callButton desktop-2-cols phone-12-cols" id="phoneButton" onclick="setPhonePic()">
+            <img id="phone" src="https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png" alt="phone" width="80" height="65" hspace="15">
+            <p id="phoneText">call tutor</p></div>
+        <div class="screensharingButton desktop-2-cols phone-12-cols" id="screenButton" onclick="setScreenPic()">
+            <img id="screen" src="https://cdn2.iconfinder.com/data/icons/pittogrammi/142/03-512.png" alt="screen" width="80" height="65" hspace="15"> 
+            <p id="screenText">screensharing</p></div>
     </div>
     <div class="contentli desktop-6-cols phone-12-cols">
         <div class="textbox">
