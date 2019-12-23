@@ -28,5 +28,14 @@
   <input type="text" name="mytext" id="mytext" oninput="set('mytext')"><br/>
 </form> 
 
+<form>
+  <input type="radio" name="terminalState" value="1" onclick="set('terminal');"  >Terminal compiling<br/>
+  <input type="radio" name="terminalState" value="-1" onclick="set('terminal');">Terminal error<br/>
+  <input type="radio" name="terminalState" value="0" onclick="set('terminal');"checked>Terminal normal<br/>
+  <input type="radio" name="terminalState" value="2" onclick="set('terminal');">Terminal Tipp geben<br/>
+  <input type="radio" name="terminalState" value="3" onclick="set('terminal');">Terminal tippen<br/>
+</form> 
+
+
 </body>
 </html>

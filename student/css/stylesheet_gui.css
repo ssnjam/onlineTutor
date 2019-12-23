@@ -53,8 +53,17 @@ body {
     flex-wrap: wrap;
 }
 
+.leftSide{
+	flex-wrap: wrap;
+}
+
 .textbox{
+	min-width: 450px;
     border-style: solid;
+	width: 90%;
+	text-align: left;
+	padding: 15px;
+	height: 80%; 
 }
 
 .contentre{
@@ -72,8 +81,20 @@ body {
 
 .terminal{
     border-style: solid;
-
+	flex-wrap: wrap;
 }
+
+
+.terminalTextArea{
+   background-color: #303030;
+   text-align: left;
+   color: #a0a0a0;
+   padding: 15px;
+
+   min-height: 300px;
+   min-width: 600px;
+}
+	
 
 .footer{
      background-color: #f1f1f1;

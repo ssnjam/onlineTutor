@@ -69,7 +69,8 @@ var handlers = {
     "animal" : setAnimal,
     "counter" : stepCounter,
     "showCounter" : showCounter,
-    "mytext" : mytext,
+    "mytext" : mytext, 
+	"terminal" : terminal,
     // add further handlers here
 };
 
@@ -99,3 +100,10 @@ function mytext(response) {
 //  console.log("mytext::value = " + value);
     put(response, {"value" : value});
 }
+
+function terminal(response) {
+	var value = getCheckedRadio("terminalState");
+//  console.log("mytext::value = " + value);
+    put(response, {"value" : value});
+}
+
