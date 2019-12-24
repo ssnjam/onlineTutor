@@ -27,7 +27,8 @@
   <input type="checkbox" checked id="showCounter" onclick="set('showCounter');">Show counter<br/>
   <input type="text" name="mytext" id="mytext" oninput="set('mytext')"><br/>
 </form> 
-
+<br/>
+<br/>
 <form>
   <input type="radio" name="terminalState" value="1" onclick="set('terminal');"  >Terminal compiling<br/>
   <input type="radio" name="terminalState" value="-1" onclick="set('terminal');">Terminal error<br/>
@@ -35,7 +36,12 @@
   <input type="radio" name="terminalState" value="2" onclick="set('terminal');">Terminal Tipp geben<br/>
   <input type="radio" name="terminalState" value="3" onclick="set('terminal');">Terminal tippen<br/>
 </form> 
-
-
+<br/>
+<br/>
+<form>
+  <input type="radio" value="0" name="correctTheCode" onclick="set('correctTheCode');">CodeCorrected<br/>
+  <input type="radio" value="1" name="correctTheCode" onclick="set('correctTheCode');">CodeFullCorrected<br/>
+  <input type="radio" value="-1" name="correctTheCode" onclick="set('correctTheCode');"checked>CodeUntouched<br/>
+</form> 
 </body>
 </html>

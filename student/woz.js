@@ -71,6 +71,7 @@ var handlers = {
     "showCounter" : showCounter,
     "mytext" : mytext, 
 	"terminal" : terminal,
+	"correctTheCode" : correctTheCode,
     // add further handlers here
 };
 
@@ -103,6 +104,12 @@ function mytext(response) {
 
 function terminal(response) {
 	var value = getCheckedRadio("terminalState");
+//  console.log("mytext::value = " + value);
+    put(response, {"value" : value});
+}
+
+function correctTheCode(response){
+	var value = getCheckedRadio("correctTheCode");
 //  console.log("mytext::value = " + value);
     put(response, {"value" : value});
 }

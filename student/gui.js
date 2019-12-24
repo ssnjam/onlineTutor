@@ -47,7 +47,7 @@ function paste(){
 	"&nbsp;&nbsp;&nbsp;&nbsp;scanf(\"%d\", &n);<LI>" +
 	"<br><LI>" + 
 	"&nbsp;&nbsp;&nbsp;&nbsp;for (c = 1; c <= n; c++)<LI>" +
-	"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f = f * c"+"<span style='background-color: yellow'>"+"  ;  "+"</span>"+"<LI>"+
+	"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f = f * c"+"<LI>"+
 	"<br><LI>" + 
 	"&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Factorial of %d = %d\\n\", n, f);<LI>"+
 	"<br><LI>" + 
@@ -65,6 +65,7 @@ var handlers = {
     "counter" : updateCounter,
     "mytext" : updateText,
 	"terminal" : terminal,
+	"correctTheCode" : correctTheCode,
     // add further handlers here
 };
 
@@ -133,6 +134,54 @@ function setScreenPic(){
         document.getElementById("screenButton").style.backgroundColor = "#336699";
         screenBool = false;
     }
+}
+
+function correctTheCode(response){
+	var state = response.value;
+	if(state == -1){
+		//do nothing
+	}else if(state == 0){
+		document.getElementById("textbox").innerHTML = "" +
+		"<br>" + "<OL><LI>" +
+		"#include &lt;stdio.h&gt;<LI>" +
+		"<br><LI>" +
+		"int main()<LI>"+
+		"{<LI>"+
+		"&nbsp;&nbsp;&nbsp;&nbsp;int c, n, f = 1;<LI>" +
+		"<br><LI>" +  
+		"&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Enter a number to calculate its factorial\\n\");<LI>" +
+		"&nbsp;&nbsp;&nbsp;&nbsp;scanf(\"%d\", &n);<LI>" +
+		"<br><LI>" + 
+		"&nbsp;&nbsp;&nbsp;&nbsp;for (c = 1; c <= n; c++)"+"<LI>"+
+		"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f = f * c"+"<span style='background-color: yellow'>"+"  ;  "+"</span>"+"<LI>"+
+		"<br><LI>" + 
+		"&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Factorial of %d = %d\\n\", n, f);<LI>"+
+		"<br><LI>" + 
+		"&nbsp;&nbsp;&nbsp;&nbsp;return 0;<LI>"+
+		"}<LI>"+
+		"<br><LI></OL>"+"<br>"+"<br>";
+	}else if(state == 1){	
+		document.getElementById("textbox").innerHTML = "" +
+		"<br>" + "<OL><LI>" +
+		"#include &lt;stdio.h&gt;<LI>" +
+		"<br><LI>" +
+		"int main()<LI>"+
+		"{<LI>"+
+		"&nbsp;&nbsp;&nbsp;&nbsp;int c, n, f = 1;<LI>" +
+		"<br><LI>" +  
+		"&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Enter a number to calculate its factorial\\n\");<LI>" +
+		"&nbsp;&nbsp;&nbsp;&nbsp;scanf(\"%d\", &n);<LI>" +
+		"<br><LI>" + 
+		"&nbsp;&nbsp;&nbsp;&nbsp;for (c = 1; c <= n; c++)"+"<span style='background-color: yellow'>"+"  {  "+"</span>"+"<LI>" +
+		"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f = f * c"+"<span style='background-color: yellow'>"+"  ;  "+"</span>"+"<LI>"+
+		"<span style='background-color: yellow'>"+"&nbsp;&nbsp;&nbsp;&nbsp;"+"}<LI>  "+"</span>" +
+		"<br><LI>" + 
+		"&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Factorial of %d = %d\\n\", n, f);<LI>"+
+		"<br><LI>" + 
+		"&nbsp;&nbsp;&nbsp;&nbsp;return 0;<LI>"+
+		"}<LI>"+
+		"<br><LI></OL>"+"<br>"+"<br>";
+	}
 }
 
 
