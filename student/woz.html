@@ -30,15 +30,17 @@
 <br/>
 <br/>
 <form>
+<div>Zuerst auf terminal normal, dann auf terminal tippen damit der tutant tippen kann. dann je ob error oder compiling oder tipp nötig, danach sofort wieder auf terminal tippen da es sonst überschreibt</div>
   <input type="radio" name="terminalState" value="1" onclick="set('terminal');"  >Terminal compiling<br/>
   <input type="radio" name="terminalState" value="-1" onclick="set('terminal');">Terminal error<br/>
-  <input type="radio" name="terminalState" value="0" onclick="set('terminal');"checked>Terminal normal<br/>
+  <input type="radio" name="terminalState" value="0" onclick="set('terminal');checked">Terminal normal<br/>
   <input type="radio" name="terminalState" value="2" onclick="set('terminal');">Terminal Tipp geben<br/>
   <input type="radio" name="terminalState" value="3" onclick="set('terminal');">Terminal tippen<br/>
 </form> 
 <br/>
 <br/>
 <form>
+	<div> ähnliches spiel wie mit textbox erst auf untouched der tutant kann sachen tippen, dann ob corrected (kleine hilfe) danach wieder untouched oder fullcorrected fürs bessere hilfe, danach wieder untouched</div>
   <input type="radio" value="0" name="correctTheCode" onclick="set('correctTheCode');">CodeCorrected<br/>
   <input type="radio" value="1" name="correctTheCode" onclick="set('correctTheCode');">CodeFullCorrected<br/>
   <input type="radio" value="-1" name="correctTheCode" onclick="set('correctTheCode');"checked>CodeUntouched<br/>
