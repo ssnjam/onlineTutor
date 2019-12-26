@@ -63,4 +63,88 @@ function showCounter(response) {
 function updateText(response) {
     document.getElementById("mytext").innerHTML = response.value;
 }
+//---------------------header------------------------------
 
+function logout(){
+    var sure = confirm("Are you sure you want to logout?");
+    if(sure == true){
+        location.href = "login.html";
+    }
+}
+
+//--------------------- Start Content-Header---------------------
+var studentPresent = false;
+
+//is false, if there is no current phone connection
+var phoneBool = false;
+
+function setPhonePic(){
+    if(studentPresent == true){
+        if(phoneBool == false){
+            document.getElementById("phone").src = "pics/redPhone.png";
+            document.getElementById("phoneText").innerHTML = "hang up";
+            document.getElementById("phoneButton").style.backgroundColor = "#457fb9";
+            phoneBool = true;
+        }else{
+            document.getElementById("phone").src = "https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png";
+            document.getElementById("phoneText").innerHTML = "call student";
+            document.getElementById("phoneButton").style.backgroundColor = "#336699";
+            phoneBool = false;
+        } 
+    }else{
+        alert("You need to get a student from queue first.");
+    }  
+}
+
+//additional function only used while screensharing
+function setPhonePic2(){
+    if(phoneBool == false){
+        document.getElementById("phone").src = "pics/redPhone.png";
+        document.getElementById("phoneText").innerHTML = "hang up";
+        document.getElementById("phoneButton").style.backgroundColor = "#457fb9";
+        phoneBool = true;
+    }else{
+        document.getElementById("phone").src = "https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png";
+        document.getElementById("phoneText").innerHTML = "call student";
+        document.getElementById("phoneButton").style.backgroundColor = "#336699";
+        phoneBool = false;
+    } 
+}
+
+function startScreenshare(){
+    if(studentPresent == true){
+        location.href = "gui2.html";
+    }else{
+        alert("You need to get a student from queue first.");
+    }
+}
+
+//user has to confirm to move on to next student
+function confirmAction(){
+    if(studentPresent == false){
+        document.getElementById("currentStudent").innerHTML = "Es sind 34 Personen in der Warteschlange<br>Du bist mit User 2362 verbunden";
+        document.getElementById("next").src = "pics/student.png";
+        document.getElementById("msg").innerHTML = "end session";
+        document.getElementById("nextButton").style.backgroundColor = "#457fb9";
+        studentPresent = true;
+    }else{
+        var action = confirm("Are you sure you want to end the session with the student?");
+        if(action == true){
+            document.getElementById("currentStudent").innerHTML = "Es sind 6 Personen in der Warteschlange";
+            document.getElementById("next").src = "https://image.flaticon.com/icons/png/512/2403/premium/2403848.png";
+            document.getElementById("msg").innerHTML = "get Next student";
+            document.getElementById("nextButton").style.backgroundColor = "#336699";
+            studentPresent = false;
+        }
+    }
+}
+
+function endScreen(){
+    alert("please end screensharing first");
+}
+
+function getBackToGui(){
+    location.href = "gui.html";
+}
+
+//--------------------- End Content-Header---------------------

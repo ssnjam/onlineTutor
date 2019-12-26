@@ -6,20 +6,26 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet_gui.css">
 </head>
 <body>
-<div class="header">OnlineTutor</div>
+<div class="header">
+    <p>OnlineTutor</p>
+    <div class="logout" onclick="logout()">logout</div>
+</div>
 <div class="content">
     <div class="contentHeader desktop-12-cols phone-12-cols">
-        <div class="persons desktop-4-cols phone-12-cols">
-            <p>Es sind 35 Personen in der Warteschlange</p>
+        <div class="persons desktop-5-cols phone-12-cols">
+            <p id="currentStudent">Es sind 35 Personen in der Warteschlange</p>
         </div>
-        <div class="getNext desktop-4-cols phone-12-cols">
-            <button type="button">get next Student</button> 
+        <div class="getNext desktop-2-cols phone-12-cols" id="nextButton" onclick="confirmAction()">
+            <img id="next" src="https://image.flaticon.com/icons/png/512/2403/premium/2403848.png" alt="leave" width="80" height="65" hspace="15">
+            <p id="msg">get next student</p>
         </div>
-        <div class="call desktop-2-cols phone-12-cols">
-            <button type="button">call Student</button> 
+        <div class="callButton desktop-2-cols phone-12-cols" id="phoneButton" onclick="setPhonePic()">
+            <img id="phone" src="https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png" alt="phone" width="80" height="65" hspace="15">
+            <p id="phoneText">call student</p>
         </div>
-        <div class="screensharing desktop-2-cols phone-12-cols">
-            <button type="button" onclick="location.href='gui2.html'">screensharing</button> 
+        <div class="screensharing desktop-2-cols phone-12-cols" id="screenButton" onclick="startScreenshare()">
+            <img id="screen" src="https://cdn2.iconfinder.com/data/icons/pittogrammi/142/03-512.png" alt="screen" width="80" height="65" hspace="15"> 
+            <p id="screenText">screensharing</p>
         </div>
     </div>
     <div class="contentli desktop-6-cols phone-12-cols">

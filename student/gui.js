@@ -68,7 +68,7 @@ var handlers = {
 	"correctTheCode" : correctTheCode,
     // add further handlers here
 };
-
+/*
 function updateAnimal(response) {
     document.getElementById(response._id).src = response.src;
     document.getElementById(response._id).width = response.width;
@@ -77,7 +77,7 @@ function updateAnimal(response) {
 function updateCounter(response) {
     document.getElementById(response._id).innerHTML =
         showCounter ? response.value : "";
-}
+}*/
 
 var showCounter = true;
 
@@ -89,8 +89,6 @@ function updateText(response) {
     document.getElementById("mytext").innerHTML = response.value;
 }
 
-//is false, if there is no current phone connection
-var phoneBool = false;
 function terminal(response){
 	var state = response.value;
 	var terminalText = document.getElementById("terminalTextArea");
@@ -104,6 +102,11 @@ function terminal(response){
 		terminalText.innerHTML = "<span style='color:red'>compile error<br></span><span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
 	}
 }
+
+//--------------------------------------------------------------------------------------------------------------
+//Content-Header
+//is false, if there is no current phone connection
+var phoneBool = false;
 
 function setPhonePic(){
     if(phoneBool == false){
@@ -135,6 +138,17 @@ function setScreenPic(){
         screenBool = false;
     }
 }
+
+//user has to confirm to leave page
+function confirmAction(){
+	var action = confirm("Are you sure you want to leave the page? For a new tutor you will have to wait in the queue again!");
+	if(action == true){
+		location.href = "starRating.html";
+	}
+}
+
+
+//----------------------------------------------------------------------------------------------------------------
 
 function correctTheCode(response){
 	var state = response.value;
@@ -183,5 +197,4 @@ function correctTheCode(response){
 		"<br><LI></OL>"+"<br>"+"<br>";
 	}
 }
-
 

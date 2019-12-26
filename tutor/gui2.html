@@ -6,22 +6,27 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet_gui2.css">
 </head>
 <body>
-<div class="header">OnlineTutor</div>
-<div class="content">
-    <div class="contentHeader desktop-12-cols phone-12-cols">
-        <div class="persons desktop-4-cols phone-12-cols">
-            <p>your are connected with user 5674</p>
-        </div>
-        <div class="getNext desktop-4-cols phone-12-cols">
-            <button type="button" onclick="location.href='rating.html'">end session</button> 
-        </div>
-        <div class="call desktop-2-cols phone-12-cols">
-            <button type="button">call Student</button> 
-        </div>
-        <div class="screensharing desktop-2-cols phone-12-cols">
-            <button type="button" onclick="location.href='gui.html'">screensharing active</button> 
-        </div>
+<div class="header">
+    <p>OnlineTutor</p>
+    <div class="logout" onclick="logout()">logout</div>
+</div>            
+<div class="contentHeader desktop-12-cols phone-12-cols">
+    <div class="persons desktop-5-cols phone-12-cols">
+        <p id="currentStudent">Es sind 35 Personen in der Warteschlange<br>Du bist mit User 2362 verbunden</p>
     </div>
+    <div class="getNext desktop-2-cols phone-12-cols" onclick="endScreen()">
+        <img src="pics/student.png" alt="leave" width="80" height="65" hspace="15">
+        <p>get next student</p>
+    </div>
+    <div class="callButton desktop-2-cols phone-12-cols" id="phoneButton" onclick="setPhonePic2()">
+        <img id="phone" src="https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png" alt="phone" width="80" height="65" hspace="15">
+        <p id="phoneText">call student</p>
+    </div>
+    <div class="screensharing desktop-2-cols phone-12-cols" id="screenButton" onclick="getBackToGui()">
+        <img id="screen" src="pics/endScreen.png" alt="screen" width="80" height="65" hspace="15"> 
+        <p id="screenText">end screensharing</p>
+    </div>
+</div>
     <div class="contentli desktop-6-cols phone-12-cols">
         <div class="videoChat">
             <h1>awsome video from screen...</h1>
