@@ -36,9 +36,13 @@
 	</div>
     <div class="contentre desktop-6-cols phone-12-cols">
         <div class="textchat">
-            <h1>TextChat</h1>
-            <p>Hier können Nachrichten ausgetauscht werden</p>
-            <div id="mytext"></div>
+            <div class="chatArea" id="chatArea">
+            </div>
+            <div class="typeBox">
+                <div class="typeArea" id="typeArea" contenteditable="true">
+                </div>
+                <button type="button" onclick ="send1()">Send</button>
+            </div>
         </div>
         <div class="terminal">
 			<div id="terminalTextArea" class="terminalTextArea" contenteditable="true">
@@ -47,9 +51,6 @@
 			<div id="debug"></div>
         </div>
     </div>
-    <!--<div id="counter"></div>
-    <div id="mytext"></div>
-    <img src="cat.jpg" width="300" id="animal" alt="cat"/>-->
 </div>
 <div class="footer">thanks for visiting</div>
 
