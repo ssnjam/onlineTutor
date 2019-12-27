@@ -68,8 +68,8 @@ var dburl = "http://127.0.0.1:5984/" + dbname + "/";
 var handlers = {
     //"animal" : setAnimal,
    // "counter" : stepCounter,
-    "showCounter" : showCounter,
-    "mytext" : mytext, 
+   // "showCounter" : showCounter,
+   // "mytext" : mytext, 
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
     // add further handlers here

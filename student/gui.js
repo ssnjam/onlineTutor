@@ -1,6 +1,5 @@
 var request = new XMLHttpRequest();
 
-
 request.onreadystatechange = function() {
     // console.log("onreadystatechange: " + request.readyState + ", " +  request.status);
     // console.log(request.responseText);
@@ -33,7 +32,7 @@ var intervalID = setInterval(update, 1000);
 
 ///////////////////////////////////////////////////////////////////////////////
 // your code below
-
+// paste of faulty code for the paste button above textbox on left side
 function paste(){
 	document.getElementById("textbox").innerHTML = "" +
 	"<br>" + "<OL><LI>" +
@@ -60,10 +59,10 @@ function paste(){
 var dbname = "gmci";
 var dburl = "http://127.0.0.1:5984/" + dbname + "/";
 var handlers = {
-    "animal" : updateAnimal,
-    "showCounter" : showCounter,
-    "counter" : updateCounter,
-    "mytext" : updateText,
+   // "animal" : updateAnimal,
+   // "showCounter" : showCounter,
+    //"counter" : updateCounter,
+   "mytext" : updateText,
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
     // add further handlers here
@@ -78,7 +77,7 @@ function updateCounter(response) {
     document.getElementById(response._id).innerHTML =
         showCounter ? response.value : "";
 }*/
-
+/*
 var showCounter = true;
 
 function showCounter(response) {
@@ -87,8 +86,8 @@ function showCounter(response) {
 
 function updateText(response) {
     document.getElementById("mytext").innerHTML = response.value;
-}
-
+}*/
+//sets different strings in the terminal based on the state given via WoZ
 function terminal(response){
 	var state = response.value;
 	var terminalText = document.getElementById("terminalTextArea");
@@ -149,7 +148,7 @@ function confirmAction(){
 
 
 //----------------------------------------------------------------------------------------------------------------
-
+//sets various strings to the textbox based on state given by WoZ
 function correctTheCode(response){
 	var state = response.value;
 	if(state == -1){
