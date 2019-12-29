@@ -32,7 +32,45 @@ var intervalID = setInterval(update, 1000);
 
 ///////////////////////////////////////////////////////////////////////////////
 // your code below
-// paste of faulty code for the paste button above textbox on left side
+var dbname = "gmci";
+var dburl = "http://127.0.0.1:5984/" + dbname + "/";
+var handlers = {
+	"terminal" : terminal,
+	"correctTheCode" : correctTheCode,
+    "send" : send,
+    // add further handlers here
+};
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// terminal functions
+// state 0: terminal starting line
+// state 2: giving tipp / usage
+// state 1: compiling
+// state -1: error code
+// state -2: not whitelisted
+// state 3: allowing typing
+function terminal(response){
+	var state = response.value;
+	var terminalText = document.getElementById("terminalTextArea");
+	if(state == 0){
+		terminalText.innerHTML = "<span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
+	}else if(state == 1){
+		terminalText.innerHTML = "<span style='color: #a0a0a0'>compiling ... <br>compiling complete <br></span><span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
+	}else if (state == 2){
+		terminalText.innerHTML = "<span style='color: #a0a0a0'>Usage: make factorial<br></span><span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
+	}else if (state == -1){
+		terminalText.innerHTML = "<span style='color:red'>compile error<br></span><span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
+	}else if (state == -2){
+		terminalText.innerHTML = "<span style='color:red'>your code was not whitelisted yet<br></span><span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
+	}
+}
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// paste of faulty code - > pastebutton above the textbox
 function paste(){
 	document.getElementById("textbox").innerHTML = "" +
 	"<br>" + "<OL><LI>" +
@@ -55,52 +93,23 @@ function paste(){
 	"<br><LI></OL>"+"<br>"+"<br>"
 }
 
-
-var dbname = "gmci";
-var dburl = "http://127.0.0.1:5984/" + dbname + "/";
-var handlers = {
-   // "animal" : updateAnimal,
-   // "showCounter" : showCounter,
-    //"counter" : updateCounter,
-   "mytext" : updateText,
-	"terminal" : terminal,
-	"correctTheCode" : correctTheCode,
-    // add further handlers here
-};
-/*
-function updateAnimal(response) {
-    document.getElementById(response._id).src = response.src;
-    document.getElementById(response._id).width = response.width;
+//----------------------------------------------------------------------------------------------------------------
+	//send button for textchat
+function send1(){
+    var text = document.getElementById("typeArea").innerHTML;
+    if(text.length != 0){
+        document.getElementById("chatArea").innerHTML += "<span style='padding: 3px; border-radius: 12px; float:right; border:4px solid #68c5cF; background-color: #98F5FF;color: blue'>" + text + "</span>" + "<br>" + "<br>";
+        document.getElementById("typeArea").innerHTML = "";    
+    }    
 }
 
-function updateCounter(response) {
-    document.getElementById(response._id).innerHTML =
-        showCounter ? response.value : "";
-}*/
-/*
-var showCounter = true;
 
-function showCounter(response) {
-    showCounter = response.checked;
+function send(response){
+    if(response.value.length != 0){
+        document.getElementById("chatArea").innerHTML += "<span style='padding: 3px; border-radius: 12px; float: left; border:4px solid #14cF6F; background-color: #54FF9F; color: green;text-align: left;'>" + response.value + "</span>" + "<br>" + "<br>";    
+    }
 }
 
-function updateText(response) {
-    document.getElementById("mytext").innerHTML = response.value;
-}*/
-//sets different strings in the terminal based on the state given via WoZ
-function terminal(response){
-	var state = response.value;
-	var terminalText = document.getElementById("terminalTextArea");
-	if(state == 0){
-		terminalText.innerHTML = "<span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
-	}else if(state == 1){
-		terminalText.innerHTML = "<span style='color: #a0a0a0'>compiling ... <br>compiling complete <br></span><span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
-	}else if (state == 2){
-		terminalText.innerHTML = "<span style='color: #a0a0a0'>Usage: make factorial<br></span><span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
-	}else if (state == -1){
-		terminalText.innerHTML = "<span style='color:red'>compile error<br></span><span style='color: green; font-weight: bold;'>VM-15@hci:</span><span style='color: #a0a0a0'>_</span>" ;
-	}
-}
 
 //--------------------------------------------------------------------------------------------------------------
 //Content-Header
@@ -148,7 +157,10 @@ function confirmAction(){
 
 
 //----------------------------------------------------------------------------------------------------------------
-//sets various strings to the textbox based on state given by WoZ
+//functionality to correct the pasted code
+// state -1 given by WoZ is doing nothing so the tutant can type
+// state 0 give first correction
+// state 1 give full correction
 function correctTheCode(response){
 	var state = response.value;
 	if(state == -1){

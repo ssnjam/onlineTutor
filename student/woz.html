@@ -11,11 +11,20 @@
 <form>
   <input type="button" value="Create DB" id="create" onclick="createDB();"><br/>
 </form> 
+
+<div class="typeBox" style='min-width: 100px; border: 2px solid; min-height:50px;'>
+    <div class="typeArea" id="typeArea" contenteditable="true"  style='min-width: 100px; border: 2px solid; min-height:50px;'>
+    </div>
+    <button type="button" onclick ="set('send');wait()">Send</button>
+    EINFACH DEN BUTTON mittelSCHNELL DOPPELKLICKEN
+</div>
+
 <br/>
 <form>
 <div>Zuerst auf terminal normal, dann auf terminal tippen damit der tutant tippen kann. dann je ob error oder compiling oder tipp nötig, danach sofort wieder auf terminal tippen da es sonst überschreibt</div>
   <input type="radio" name="terminalState" value="1" onclick="set('terminal');"  >Terminal compiling<br/>
   <input type="radio" name="terminalState" value="-1" onclick="set('terminal');">Terminal error<br/>
+  <input type="radio" name="terminalState" value="-2" onclick="set('terminal');">Terminal code not whitelisted<br/>
   <input type="radio" name="terminalState" value="0" onclick="set('terminal');checked">Terminal normal<br/>
   <input type="radio" name="terminalState" value="2" onclick="set('terminal');">Terminal Tipp geben<br/>
   <input type="radio" name="terminalState" value="3" onclick="set('terminal');">Terminal tippen<br/>

@@ -66,41 +66,11 @@ function createDB() {
 var dbname = "gmci";
 var dburl = "http://127.0.0.1:5984/" + dbname + "/";
 var handlers = {
-    //"animal" : setAnimal,
-   // "counter" : stepCounter,
-   // "showCounter" : showCounter,
-   // "mytext" : mytext, 
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
+    "send" : send,
     // add further handlers here
 };
-
-
-function setAnimal(response) {
-    var src = getCheckedRadio("animalImage");
-    var width = parseInt(document.getElementById("animalWidth").value);
-    // console.log(src);
-    // console.log(width);
-    put(response, {"src" : src, "width" : width});
-}
-
-function stepCounter(response) {
-    var value = response.value ? response.value : 0;
-    // console.log(value);
-    put(response, {"value" : value + 1});
-}
-
-function showCounter(response) {
-    var checked = document.getElementById("showCounter").checked;
-    // console.log(checked);
-    put(response, {"checked" : checked});
-}
-
-function mytext(response) {
-    var value = document.getElementById("mytext").value;
-//  console.log("mytext::value = " + value);
-    put(response, {"value" : value});
-}
 
 function terminal(response) {
 	var value = getCheckedRadio("terminalState");
@@ -114,3 +84,10 @@ function correctTheCode(response){
     put(response, {"value" : value});
 }
 
+//----------------------------------------------------------------------------------------------------------------
+	//send button for textchat
+function send(response){
+    var value = document.getElementById("typeArea").innerHTML;
+    document.getElementById("typeArea").innerHTML = "";
+    put(response, {"value" : value});
+}
