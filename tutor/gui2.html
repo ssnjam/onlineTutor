@@ -28,22 +28,41 @@
     </div>
 </div>
 <div class="content desktop-12-cols phone-12-cols">
-    <div class="contentli desktop-6-cols phone-12-cols">
-        <div class="videoChat">
+     <div class="contentli desktop-6-cols phone-12-cols">
+		<div class="leftSide">
+		<div class="videoChat">
             <h1>awsome video from screen...</h1>
         </div>
-        <div class="textbox">
-            <h1>Textbox</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></div>
-    </div>
+			<div class="buttonsforIcons">
+				<button type="button" class="notpastebutton"><div><img src="https://img.icons8.com/ios/64/000000/copy.png" class="iconButtons"> Copy</div></button>
+				<button type="button" class="notpastebutton" onclick ="paste()"><div><img src="https://img.icons8.com/ios/64/000000/paste.png" class="iconButtons"> Paste</div></button>
+				<button type="button" class="notpastebutton"><div><img src="https://img.icons8.com/metro/26/000000/bold.png" class="iconButtons"> Bold</div></button>
+				<button type="button" class="notpastebutton"><div><img src="https://img.icons8.com/metro/26/000000/italic.png" class="iconButtons"> Italic</div></button>
+				<button type="button" class="notpastebutton"><div><img src="https://img.icons8.com/metro/26/000000/underline.png" class="iconButtons"> Under...</div></button>
+				<button type="button" class="notpastebutton"><div><img src="https://img.icons8.com/color/64/000000/marker-pen.png" class="iconButtons"> Mark</div></button>
+				<button type="button" class="pastebutton"><div><input type="checkbox" name="vehicle2" value="Car"> Whitelist Code</div></button>
+
+			</div>
+			<div class="textbox" id="textbox" contenteditable="true">
+				
+			</div>
+		</div>
+	</div>
     <div class="contentre desktop-6-cols phone-12-cols">
         <div class="textchat">
-            <h1>TextChat</h1>
-            <p>Hier können Nachrichten ausgetauscht werden</p>
-            <div id="mytext"></div>
+            <div class="chatArea" id="chatArea">
+            </div>
+            <div class="typeBox">
+			<button class="sendbutton" type="button" onclick ="send1()">Send</button>
+                <div class="typeArea" id="typeArea" contenteditable="true">
+                </div>
+            </div>
         </div>
         <div class="terminal">
-            <img src="cat.jpg" width="300" id="animal" alt="cat"/>
+			<div id="terminalTextArea" class="terminalTextArea" contenteditable="true">
+				
+			</div>
+			<div id="debug"></div>
         </div>
     </div>
   

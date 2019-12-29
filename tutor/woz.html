@@ -12,20 +12,29 @@
   <input type="button" value="Create DB" id="create" onclick="createDB();"><br/>
 </form> 
 
-<form>
-  <!-- http://www.w3schools.com/tags/ref_eventattributes.asp -->
-  <input type="radio" name="animalImage" value="pics/cat.jpg" onclick="set('animal');" checked>Cat<br/>
-  <input type="radio" name="animalImage" value="pics/dog.jpg" onclick="set('animal');">Dog<br/>
-  <input type="range" id="animalWidth" min="10" max="500" onchange="set('animal');" oninput="set('animal');"><br/>
-</form> 
+<div class="typeBox" style='min-width: 100px; border: 2px solid; min-height:50px;'>
+    <div class="typeArea" id="typeArea" contenteditable="true"  style='min-width: 100px; border: 2px solid; min-height:50px;'>
+    </div>
+    <button type="button" onclick ="set('send');wait()">Send</button>
+    EINFACH DEN BUTTON mittelSCHNELL DOPPELKLICKEN
+</div>
 
 <br/>
-
 <form>
-  <input type="button" value="Count" id="counter" onclick="set('counter');"><br/>
-  <input type="checkbox" checked id="showCounter" onclick="set('showCounter');">Show counter<br/>
-  <input type="text" name="mytext" id="mytext" oninput="set('mytext')"><br/>
+<div>Zuerst auf terminal normal, dann auf terminal tippen damit der tutant tippen kann. dann je ob error oder compiling oder tipp nötig, danach sofort wieder auf terminal tippen da es sonst überschreibt</div>
+  <input type="radio" name="terminalState" value="1" onclick="set('terminal');"  >Terminal compiling<br/>
+  <input type="radio" name="terminalState" value="-1" onclick="set('terminal');">Terminal error<br/>
+  <input type="radio" name="terminalState" value="-2" onclick="set('terminal');">Terminal code not whitelisted<br/>
+  <input type="radio" name="terminalState" value="0" onclick="set('terminal');checked">Terminal normal<br/>
+  <input type="radio" name="terminalState" value="2" onclick="set('terminal');">Terminal Tipp geben<br/>
+  <input type="radio" name="terminalState" value="3" onclick="set('terminal');">Terminal tippen<br/>
 </form> 
-
+<br/>
+<br/>
+<form>
+	<div> ähnliches spiel wie mit textbox erst auf untouched der tutant kann sachen tippen, dann ob corrected (kleine hilfe) danach wieder untouched oder fullcorrected fürs bessere hilfe, danach wieder untouched</div>
+  <input type="radio" value="0" name="correctTheCode" onclick="set('correctTheCode');">CodeSnippet<br/>
+  <input type="radio" value="-1" name="correctTheCode" onclick="set('correctTheCode');"checked>CodeUntouched<br/>
+</form> 
 </body>
 </html>

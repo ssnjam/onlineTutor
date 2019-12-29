@@ -124,18 +124,35 @@ body {
     display: flex;
     -webkit-flex-wrap: wrap; 
     flex-wrap: wrap;
-    flex-direction: column;
 }
 
-.videoChat{
-    border-style: solid;
-    min-width: 300px;
-    min-height: 400px;
+.leftSide{
+	flex-wrap: wrap;
+	width: 100%;
+	min-width: 100%;
+
 }
 
 .textbox{
     border-style: solid;
+	text-align: left;
+	padding: 15px;
+	margin: 10px;
+	height: 30%;
+	border-radius: 12px;
+	word-wrap: break-word;     
 }
+
+
+.videoChat{
+    border-style: solid;
+	height: 40%;
+	margin: 5px;
+	 border-radius: 12px;
+	padding: 30px;
+	
+}
+
 
 .contentre{
     display: -webkit-flex;
@@ -143,16 +160,149 @@ body {
     -webkit-flex-wrap: wrap; 
     flex-wrap: wrap;
     flex-direction: column;
+	height: 100%;
+	width: 50%;
 }
 
 .textchat{
     border-style: solid;
-     
+    border-radius: 12px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
+	height: 50%;
+	width: 90%;
 }
 
-.terminal{
-    border-style: solid;
+.chatArea{
+   height: 100%;
+   width: 100%;
+   min-height: 150px;
+}
 
+.typeBox{
+   
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 10px;
+	min-height: 20px;
+	width: 100%;
+}
+
+.typeArea{
+    width: 80%;
+    border-style: solid;
+    border-radius: 12px;
+	min-height: 20px;
+	text-align: left;
+	padding: 4px;
+}
+
+.sendbutton{
+	 border-radius: 12px;
+	 margin: 3px;
+	 background-color: #336699;
+	 color: #ffffff;
+}
+
+.sendbutton:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #457fb9;
+	color: #000000;
+}
+
+.buttonsforIcons{
+	flex-direction: row;
+	width: 100%;
+}
+
+.pastebutton{
+	border: solid;
+	padding: 5px;
+	border-radius: 12px;
+	background-color: #336699;
+	color: #ffffff;
+	min-height: 60px;
+	max-height: 60px;
+	min-width: 60px;
+	max-width: 60px;
+	flex-direction:column;
+}
+
+
+.pastebutton:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #457fb9;
+	color: #000000;
+}
+
+.notpastebutton{
+	border: solid;
+	padding: 5px;
+	border-radius: 12px;
+	width: 10%;
+	background-color: #336699;
+	color: #ffffff;
+	min-height: 60px;
+	max-height: 60px;
+	min-width: 60px;
+	max-width: 60px;
+	flex-direction:column;
+}
+
+.emptybox{
+	padding: 5px;
+	min-height: 60px;
+	max-height: 60px;
+	min-width: 60px;
+	max-width: 60px;
+}
+
+.notpastebutton:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #457fb9;
+	color: #000000;
+	cursor:not-allowed;
+	
+}
+
+.buttons{
+	border: solid;
+	padding: 5px;
+	border-radius: 12px;
+	width: 10%;
+	
+}
+
+.iconButtons{
+	height: 30px;
+	width: 30px;	
+}
+
+
+.terminal{
+
+	flex-wrap: wrap;
+	width: 90%;
+	margin: 6px;
+	padding: 3px;
+	
+}
+
+
+.terminalTextArea{
+   background-color: #303030;
+   border-style: solid;
+   text-align: left;
+   color: #a0a0a0;
+   min-height: 350px;
+   padding: 10px;
 }
 
 .footer{
