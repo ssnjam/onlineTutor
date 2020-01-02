@@ -41,6 +41,7 @@ var handlers = {
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
     "send" : send,
+    "header" : header,
     // add further handlers here
 };
 
@@ -74,7 +75,7 @@ function terminal(response){
 
 
 //----------------------------------------------------------------------------------------------------------------
-	//send button for textchat
+//send button for textchat
 function send1(){
     var text = document.getElementById("typeArea").innerHTML;
     if(text.length != 0){
@@ -89,52 +90,6 @@ function send(response){
         document.getElementById("chatArea").innerHTML += "<span style='padding: 3px; border-radius: 12px; float: left; border:4px solid #68c5cF; background-color: #54FF9F; color: green;text-align: left;'>" + response.value + "</span>" + "<br>" + "<br>";    
     }
 }
-
-
-//--------------------------------------------------------------------------------------------------------------
-//Content-Header
-//is false, if there is no current phone connection
-var phoneBool = false;
-
-function setPhonePic(){
-    if(phoneBool == false){
-        document.getElementById("phone").src = "pics/redPhone.png";
-        document.getElementById("phoneText").innerHTML = "hang up";
-        document.getElementById("phoneButton").style.backgroundColor = "#457fb9";
-        phoneBool = true;
-    }else{
-        document.getElementById("phone").src = "https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png";
-        document.getElementById("phoneText").innerHTML = "call tutor";
-        document.getElementById("phoneButton").style.backgroundColor = "#336699";
-        phoneBool = false;
-    }   
-}
-
-//is false, if there is no screensharing
-var screenBool = false;
-
-function setScreenPic(){
-    if(screenBool == false){
-        document.getElementById("screen").src = "pics/endScreen.png";
-        document.getElementById("screenText").innerHTML = "end screensharing";
-        document.getElementById("screenButton").style.backgroundColor = "#457fb9";
-        screenBool = true;
-    }else{
-        document.getElementById("screen").src = "https://cdn2.iconfinder.com/data/icons/pittogrammi/142/03-512.png";
-        document.getElementById("screenText").innerHTML = "screensharing";
-        document.getElementById("screenButton").style.backgroundColor = "#336699";
-        screenBool = false;
-    }
-}
-
-//user has to confirm to leave page
-function confirmAction(){
-	var action = confirm("Are you sure you want to leave the page? For a new tutor you will have to wait in the queue again!");
-	if(action == true){
-		location.href = "starRating.html";
-	}
-}
-
 
 //----------------------------------------------------------------------------------------------------------------
 //functionality to correct the pasted code
@@ -168,7 +123,7 @@ function correctTheCode(response){
 	}
 }
 //---------------------header------------------------------
-
+//logout button for tutor
 function logout(){
     var sure = confirm("Are you sure you want to logout?");
     if(sure == true){
@@ -181,6 +136,23 @@ var studentPresent = false;
 
 //is false, if there is no current phone connection
 var phoneBool = false;
+
+//is false, if there is no screensharing
+var screenBool = false;
+
+function setScreenPic(){
+    if(screenBool == false){
+        document.getElementById("screen").src = "pics/endScreen.png";
+        document.getElementById("screenText").innerHTML = "end screensharing";
+        document.getElementById("screenButton").style.backgroundColor = "#457fb9";
+        screenBool = true;
+    }else{
+        document.getElementById("screen").src = "https://cdn2.iconfinder.com/data/icons/pittogrammi/142/03-512.png";
+        document.getElementById("screenText").innerHTML = "screensharing";
+        document.getElementById("screenButton").style.backgroundColor = "#336699";
+        screenBool = false;
+    }
+}
 
 function setPhonePic(){
     if(studentPresent == true){
@@ -217,7 +189,7 @@ function setPhonePic2(){
 
 function startScreenshare(){
     if(studentPresent == true){
-        location.href = "gui2.html";
+            location.href = "gui2.html";
     }else{
         alert("You need to get a student from queue first.");
     }
@@ -234,11 +206,12 @@ function confirmAction(){
     }else{
         var action = confirm("Are you sure you want to end the session with the student?");
         if(action == true){
-            document.getElementById("currentStudent").innerHTML = "Es sind 6 Personen in der Warteschlange";
+            location.href = "rating.html";
+           /* document.getElementById("currentStudent").innerHTML = "Es sind 6 Personen in der Warteschlange";
             document.getElementById("next").src = "https://image.flaticon.com/icons/png/512/2403/premium/2403848.png";
             document.getElementById("msg").innerHTML = "get Next student";
             document.getElementById("nextButton").style.backgroundColor = "#336699";
-            studentPresent = false;
+            studentPresent = false;*/
         }
     }
 }
@@ -250,5 +223,34 @@ function endScreen(){
 function getBackToGui(){
     location.href = "gui.html";
 }
+
+//wizard function to set content header for call button
+//state 0 = do nothing
+//state 1 = set phonecall active
+//state 2 = deactivate phonecall
+//state 3 = get student from queue
+function header(response){
+    var state = response.value;
+    if(state == 0){
+        //do nothing
+    }else if(state == 1){
+        document.getElementById("phone").src = "pics/redPhone.png";
+        document.getElementById("phoneText").innerHTML = "hang up";
+        document.getElementById("phoneButton").style.backgroundColor = "#457fb9";
+        phoneBool = true;
+    }else if(state == 2){
+        document.getElementById("phone").src = "https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png";
+        document.getElementById("phoneText").innerHTML = "call student";
+        document.getElementById("phoneButton").style.backgroundColor = "#336699";
+        phoneBool = false;
+    }else if(state == 3){
+        document.getElementById("currentStudent").innerHTML = "Es sind 34 Personen in der Warteschlange<br>Du bist mit User 2362 verbunden";
+        document.getElementById("next").src = "pics/student.png";
+        document.getElementById("msg").innerHTML = "end session";
+        document.getElementById("nextButton").style.backgroundColor = "#457fb9";
+        studentPresent = true;
+    }
+}
+
 
 //--------------------- End Content-Header---------------------

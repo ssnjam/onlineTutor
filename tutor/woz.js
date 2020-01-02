@@ -115,8 +115,16 @@ var handlers = {
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
     "send" : send,
+    "header" : header,
     // add further handlers here
 };
+
+//content-header: call button
+function header(response){
+    var value = getCheckedRadio("headState");
+    //  console.log("mytext::value = " + value);
+    put(response, {"value" : value});
+}
 
 function terminal(response) {
 	var value = getCheckedRadio("terminalState");
