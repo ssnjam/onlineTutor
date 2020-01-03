@@ -190,6 +190,7 @@ function setPhonePic2(){
 function startScreenshare(){
     if(studentPresent == true){
             location.href = "gui2.html";
+            document.getElementById("test").src = "https://res.cloudinary.com/teepublic/image/private/s--p4CRpWLH--/c_crop,x_10,y_10/c_fit,w_992/c_crop,g_north_west,h_972,w_1127,x_-68,y_-346/l_misc:transparent_1260/fl_layer_apply,g_north_west,x_-134,y_-488/c_mfit,g_north_east,u_misc:tapestry-l-l-gradient/e_displace,fl_layer_apply,x_0,y_19/l_upload:v1507037316:production:blanks:knoqtwkqk9vucfsy8ke0/fl_layer_apply,g_north_west,x_0,y_0/b_rgb:191919/c_limit,f_jpg,h_630,q_90,w_630/v1516770153/production/designs/2303889_0.jpg";
     }else{
         alert("You need to get a student from queue first.");
     }

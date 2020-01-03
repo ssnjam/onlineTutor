@@ -138,11 +138,21 @@ function setScreenPic(){
         document.getElementById("screen").src = "pics/endScreen.png";
         document.getElementById("screenText").innerHTML = "end screensharing";
         document.getElementById("screenButton").style.backgroundColor = "#457fb9";
+        document.getElementById("vid").src= "pics/preview.mp4";
+        document.getElementById("vid").autoplay = true;
+        document.getElementById("vid").loop = true;
+        document.getElementById("vid").mute = true;
+        document.getElementById("vid").controlls = true;
         screenBool = true;
     }else{
         document.getElementById("screen").src = "https://cdn2.iconfinder.com/data/icons/pittogrammi/142/03-512.png";
         document.getElementById("screenText").innerHTML = "screensharing";
         document.getElementById("screenButton").style.backgroundColor = "#336699";
+        document.getElementById("vid").src = "";
+        document.getElementById("vid").autoplay = false;
+        document.getElementById("vid").loop = false;
+        document.getElementById("vid").mute = false;
+        document.getElementById("vid").controlls = false;
         screenBool = false;
     }
 }
