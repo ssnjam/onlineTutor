@@ -10,12 +10,59 @@ body {
     color: #336699;
     padding: 10px;
     margin-top: 5px;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     display: -webkit-flex; 
     -webkit-justify-content: center; 
     display: flex;
     justify-content: center;
 	text-align: center;
+}
+
+.greyButton {
+	background-color: #dddddd; /* blue*/
+	border-radius: 8px;
+	color: #525050;
+	border: 2px solid #cccccc;
+	padding: 10px 15px 10px 15px;
+	box-shadow: 0 9px #999;
+	outline: none;
+	font-weight: bold;
+	margin:15px; 
+	
+	
+}
+
+.greyButton:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+
+.blueButton {
+	background-color: #007fff; /* blue*/
+	border-radius: 8px;
+	color: white;
+	border: 2px solid #0073ff;
+	padding: 10px 15px 10px 15px;
+	box-shadow: 0 9px #999;
+	outline: none;
+	font-weight: bold;
+	margin: 15px;
+}
+
+.blueButton:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#justPlay {
+	position: absolute;
+	left: 0px;
+	top: 75px;
+}
+
+#joinQueue {
+	
 }
 
 .content{
@@ -33,13 +80,15 @@ body {
 
 
 .footer{
-    background-color: #f1f1f1;
     font-size: 20px;
     color: #336699;
-    display: flex;
-   justify-content: center;
-   text-align: center;
-   padding: 15 px;
+    justify-content: center;
+    text-align: center;
+    padding: 15 px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+   
 }
 
 /* Phones: */
