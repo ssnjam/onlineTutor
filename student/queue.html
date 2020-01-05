@@ -12,6 +12,15 @@ function showDiv() {
 		x.style.display = "none";
 	}
 }
+
+function showDiv2() {
+	var x = document.getElementById('askWindow');
+	if (x.style.display == "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
 </script>
 </head>
 <body>
@@ -20,6 +29,13 @@ function showDiv() {
 			<button class="greyButton" id="play" onclick="window.location.href = 'games.html'">
 				just play
 			</button>
+			<button class="greyButton" id="ask" onclick="showDiv2()">
+				Kurzfrage
+			</button>
+			<div id="askWindow" style="display:none;" >
+				Wie lautet deine Frage?<br>
+				<input id="question" type="text" onKeyDown="if(event.keyCode==13) showDiv2();"><br>
+			</div>
 			<button class="blueButton" id="joinQueue" onclick="window.location.href = 'queueWaiting.html'">
 				join Queue
 			</button>

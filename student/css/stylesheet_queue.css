@@ -122,6 +122,10 @@ body {
     flex-wrap: wrap;
 }
 
+#ask{
+	top: 60px;
+}
+
 #waitingUser{
 	position: absolute;
     bottom: 10px;
