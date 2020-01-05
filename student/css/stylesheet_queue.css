@@ -32,7 +32,7 @@ body {
 	left: 0px;
 	top: 0px;
 	
-	
+	width:100px;
 }
 
 .greyButton:active {
@@ -135,8 +135,21 @@ body {
 #tutorOnline{
 	position: absolute;
     bottom: 10px;
-	right: 10px;
+	right: 60px;
 	font-weight: bold;
+}
+
+#chooseTutor:active .tooltiptext {
+	width:200px;
+	visibility: visible;
+	top:-200%;
+	right:0;
+}
+
+#chooseTutor{
+	position: absolute;
+    bottom: 10px;
+	right: 5px;
 }
 
 /* Phones: */
