@@ -25,21 +25,9 @@ body {
     justify-content: center;
 	text-align: center;
 	color: #336699;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap; 
-    flex-wrap: wrap;
+    display: block;
 }
 
-.footer{
-    background-color: #f1f1f1;
-    font-size: 20px;
-    color: #336699;
-    display: flex;
-   justify-content: center;
-   text-align: center;
-   padding: 15 px;
-}
 
 /* Phones: */
 .phone-12-cols {width: 100%;}
