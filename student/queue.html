@@ -3,13 +3,22 @@
 <head>
 <title>OnlineTutor</title>
 <link rel="stylesheet" type="text/css" href="css/stylesheet_queue.css">
-<script type="text/javascript" src="gui.js"></script>
+<script>
+function showDiv() {
+	var x = document.getElementById('checkbox');
+	if (x.style.display == "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+</script>
 </head>
 <body>
     <div class="header">OnlineTutor</div>
     <div class="content">
 			<button class="greyButton" id="play" onclick="window.location.href = 'games.html'">
-				just Play
+				just play
 			</button>
 			<button class="blueButton" id="joinQueue" onclick="window.location.href = 'queueWaiting.html'">
 				join Queue
@@ -21,19 +30,18 @@
 			</span>
 		</button>
 		<div id="waitingUser">
-			15 User warten auf einen Tutor. 
+			15 users are waiting. 
 		</div>
 		<div id="tutorOnline">
-			Es sind 3 Tutoren online!
+			3 tutors are online!
 		</div>
-		<div id="chooseTutor">
-			<img src="pics/images.png" width="50">
-			<div class="tooltiptext" data-toggle="tooltip">
-				<div>Wähle deine Tutoren:<div/>
-				<input type="checkbox" name="tutor1" checked>Kevin Schumann<br>
-				<input type="checkbox" name="tutor2" checked> Rudolph Random<br>
-				<input type="checkbox" name="tutor3" checked>Jakob Jakobs<br><br>
-			</div>
+		<input id="chooseTutor" type="image" src="pics/images.png" onclick="showDiv()"/>
+		<div id="checkbox" style="display:none;" >
+			<div>Choose your tutors:<div/>
+			<input type="checkbox" name="tutor1" checked>Kevin Schumann<br>
+			<input type="checkbox" name="tutor2" checked> Rudolph Random<br>
+			<input type="checkbox" name="tutor3" checked>Jakob Jakobs<br><br>
+			<button id="submitCheck" class="greyButton" onclick="showDiv()">submit<br><br>
 		</div>
     </div>
 </body>
