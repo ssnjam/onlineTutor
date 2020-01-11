@@ -1,3 +1,4 @@
+//modified version from https://wiki.selfhtml.org/wiki/JavaScript/Tutorials/Spiele/Tic-Tac-Toe
 document.addEventListener("DOMContentLoaded", function () {
 	function TicTacToe(element) {
 			var current = 0,
