@@ -87,7 +87,9 @@ function correctTheCode(response){
 //----------------------------------------------------------------------------------------------------------------
 	//send button for textchat
 function send(response){
+    document.getElementById("typeArea").innerHTML = document.getElementById("typeArea2").value;
     var value = document.getElementById("typeArea").innerHTML;
-    document.getElementById("typeArea").innerHTML = "";
+    document.getElementById("typeArea").innerHTML = ""; 
     put(response, {"value" : value});
 }
+
