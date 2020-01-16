@@ -46,6 +46,13 @@ body {
     margin-bottom: 6px;
 }
 
+.wid{
+    min-width: 100px;
+    min-height: 60px;
+    max-width: 100px;
+    min-height: 60px;
+}
+
 .tutor{
     font-size: 22px;
 }

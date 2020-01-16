@@ -1,8 +1,40 @@
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+.header {
+     font-size: 26pt;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: #336699;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    display: -webkit-flex; 
+    -webkit-justify-content: center; 
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: row;
+}
+
+.content{
+	color: #336699;
+}
+
+
+
+
 /* from https://wiki.selfhtml.org/wiki/JavaScript/Tutorials/Spiele/Tic-Tac-Toe */
 .navbutton {
     padding: 5px;
     font-size: 16px;
 }
+
+.tic-tac-toe{
+    padding 200px;
+}
+
 .tic-tac-toe table {
 	border: 2px solid black;
 	border-collapse: collapse;
