@@ -3,7 +3,7 @@ body {
 }
 
 .header {
-     font-size: 26pt;
+    font-size: 26pt;
     font-weight: bold;
     background-color: #f1f1f1;
     color: #336699;
@@ -18,11 +18,30 @@ body {
     flex-direction: row;
 }
 
-.content{
-	color: #336699;
+.emptyHeader{
+	flex: 20%;
 }
 
+.headerContent{
+	flex: 60%;
+}
+.headerButton{
+	flex: 20%;
+}
 
+.content{
+	color: #336699;
+	display: -webkit-flex; 
+    -webkit-justify-content: center; 
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: column;
+}
+
+.ticTitle{
+
+}
 
 
 /* from https://wiki.selfhtml.org/wiki/JavaScript/Tutorials/Spiele/Tic-Tac-Toe */
@@ -97,8 +116,11 @@ body {
 .tic-tac-toe .game-over {
 	border-color: red;
 }
-.tic-tac-toe {
-   position: relative;
-  left: 40%;
-  top: 40%;
+.tic-tac-toe caption{
+	padding: 30px;
+}
+.tic-tac-toe table{
+  position: absolute;
+  left: 50%;
+  margin-left: -7.5em;
 }
