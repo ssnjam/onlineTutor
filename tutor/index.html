@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WoZ</title>
+<script type="text/javascript" src="woz.js"></script>
+</head>
+<body>
+
+<h1>Student Input Interface</h1>
+<h3>Button to create DB:</h3>
+<form>
+  <input type="button" value="Create DB" id="create" onclick="createDB();"><br/>
+</form> 
+<h3>Content Header Control:</h3>
+<p>This area is used to control the functions of the content header, such as the call button.<br/>If you have performed an action always go back to "do nothing"!</p>
+<form>
+  <input type="radio" name="headState" value="0" onclick="set('header');checked">Do nothing<br/>
+  <input type="radio" name="headState" value="1" onclick="set('header');">Set call button active<br/>
+  <input type="radio" name="headState" value="2" onclick="set('header');">Set call button deactivated<br/>
+  <input type="radio" name="headState" value="3" onclick="set('header');">Get student from queue<br/>
+</form>
+<h3>Chat window:</h3>
+<div class="typeBox" style='min-width: 100px; border: 2px solid; min-height:50px;'>
+    <div class="typeArea" id="typeArea" contenteditable="true"  style='min-width: 100px; border: 2px solid; min-height:50px;'> 
+    
+    </div>
+    <button type="button" onclick ="set('send')">Send</button>
+    EINFACH DEN BUTTON mittelSCHNELL DOPPELKLICKEN
+</div>
+<input type="text" id="contentForSync"> 
+
+<br/>
+<h3>Terminal functions:</h3>
+<form>
+<div>Zuerst auf terminal normal, dann auf terminal tippen damit der tutant tippen kann. dann je ob error oder compiling oder tipp nötig, danach sofort wieder auf terminal tippen da es sonst überschreibt</div>
+  <input type="radio" name="terminalState" value="1" onclick="set('terminal');"  >Terminal compiling<br/>
+  <input type="radio" name="terminalState" value="-1" onclick="set('terminal');">Terminal error<br/>
+  <input type="radio" name="terminalState" value="-2" onclick="set('terminal');">Terminal code not whitelisted<br/>
+  <input type="radio" name="terminalState" value="0" onclick="set('terminal');checked">Terminal normal<br/>
+  <input type="radio" name="terminalState" value="2" onclick="set('terminal');">Terminal Tipp geben<br/>
+  <input type="radio" name="terminalState" value="3" onclick="set('terminal');">Terminal tippen<br/>
+</form> 
+<br/>
+<br/>
+<h3>Textbox functions:</h3>
+<form>
+	<div> ähnliches spiel wie mit textbox erst auf untouched der tutant kann sachen tippen, dann ob corrected (kleine hilfe) danach wieder untouched oder fullcorrected fürs bessere hilfe, danach wieder untouched</div>
+  <input type="radio" value="0" name="correctTheCode" onclick="set('correctTheCode');">CodeSnippet<br/>
+  <input type="radio" value="-1" name="correctTheCode" onclick="set('correctTheCode');"checked>CodeUntouched<br/>
+</form> 
+</body>
+</html>

@@ -31,9 +31,7 @@ body {
     font-size: 16px;
 }
 
-.tic-tac-toe{
-    padding 200px;
-}
+
 
 .tic-tac-toe table {
 	border: 2px solid black;
@@ -98,4 +96,9 @@ body {
 
 .tic-tac-toe .game-over {
 	border-color: red;
+}
+.tic-tac-toe {
+   position: relative;
+  left: 40%;
+  top: 40%;
 }

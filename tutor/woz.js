@@ -139,9 +139,10 @@ function correctTheCode(response){
 }
 
 //----------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------
 	//send button for textchat
 function send(response){
-    var value = document.getElementById("typeArea").innerHTML;
-    document.getElementById("typeArea").innerHTML = "";
+    var value = document.getElementById("contentForSync").value;
+    document.getElementById("contentForSync").value = ""; 
     put(response, {"value" : value});
 }
