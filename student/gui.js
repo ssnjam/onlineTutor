@@ -38,7 +38,7 @@ var handlers = {
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
     "send" : send,
-    "popUpWindows"  : popUpWindows,
+    "popupCall"  : popupCall,
     // add further handlers here
 };
 
@@ -226,20 +226,48 @@ function correctTheCode(response){
 	}
 }
 
-function popUpWindows(response){
+function popupCall(response){
 	var state = response.value;
-    if(state == 1){
-        if (confirm('A call is incoming')) {
-            // Save it!
-        } else {
-            // Do nothing!
-        }
-        
-        
-        
-    }else if(state == 2){
-        
+	if(state == -1){
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("incomingCall").style.display = "block";
+        document.getElementById("acceptcall").onclick = function(){acceptCall()};
+        document.getElementById("declinecall").onclick = function(){declineCall()};
+    }else if(state == 1){
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("incomingScreen").style.display = "block";
+        document.getElementById("acceptscreen").onclick = function(){acceptScreenCall()};
+        document.getElementById("declinescreen").onclick = function(){declineScreenCall()};
     }
-    
 }
 
+function acceptCall(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("incomingCall").style.display = "none";
+    document.getElementById("phone").src = "pics/redPhone.png";
+    document.getElementById("phoneText").innerHTML = "hang up";
+    document.getElementById("phoneButton").style.backgroundColor = "#457fb9";
+    phoneBool = true;
+}
+
+function declineCall(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("incomingCall").style.display = "none";
+    phoneBool = false;
+}
+
+function acceptScreenCall(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("incomingScreen").style.display = "none";
+    document.getElementById("screen").src = "pics/endScreen.png";
+    document.getElementById("screenText").innerHTML = "end screensharing";
+    document.getElementById("screenButton").style.backgroundColor = "#457fb9";
+    document.getElementById("vid").src= "pics/test.gif"
+    screenBool = true;
+}
+
+function declineScreenCall(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("incomingScreen").style.display = "none";
+    screenBool = false;
+}

@@ -69,7 +69,7 @@ var handlers = {
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
     "send" : send,
-    "popUpWindows"  : popUpWindows,
+    "popupCall"  : popupCall,
     // add further handlers here
 };
 
@@ -94,7 +94,16 @@ function send(response){
 }
 
 
-function popUpWindows(response){
-    var value = getCheckedRadio("popUpWindows");
+function popupCall(response){
+	var value = getCheckedRadio("popupCall");
+//  console.log("mytext::value = " + value);
     put(response, {"value" : value});
+}
+
+function createCall(response){
+    put(response, {"value" : "nothing"});
+}
+
+function createScreen(response){
+    put(response, {"value" : "nothing"});
 }

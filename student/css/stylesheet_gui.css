@@ -3,6 +3,83 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+
+.incomingCall{
+    display: none;
+    z-index: 2;
+    padding: 50px;
+    width: 400px;
+    height: 200px;
+    background-color: #f1f1f1;
+    position: absolute;
+    margin-right: -200px;
+    margin-top: -100px;
+    right: 50%;
+    top: 50%;
+}
+
+.incomingScreen{
+    display: none;
+    z-index: 2;
+    padding: 50px;
+    width: 400px;
+    height: 200px;
+    background-color: #f1f1f1;
+    position: absolute;
+    margin-right: -200px;
+    margin-top: -100px;
+    right: 50%;
+    top: 50%;
+}
+
+.ringingPhone{
+    width: 50px;
+    height: 50px;
+    background-color: #c1c1c1;
+}
+
+.firstLine{
+    justify-content: center;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.firstLineScreen{
+    justify-content: center;
+    margin: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.secondLine{
+    justify-content: center;
+    margin: 15px;
+}
+
+.buttonPane{
+    justify-content: center;
+}
+
+.acceptButton{
+    width: 100px;
+    margin-left: 70px;
+    margin-top: 60px;
+}
+
 .header {
     font-size: 36pt;
     font-weight: bold;

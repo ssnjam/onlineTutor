@@ -6,6 +6,31 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet_gui.css">
 </head>
 <body>
+<div class="overlay" id="overlay"></div>
+<div class="incomingCall" id="incomingCall">
+    <div class ="firstLine">
+        <img class="ringingPhone" src="pics/orangePhone.gif">
+        Incoming call! 
+        <img class="ringingPhone" src="pics/orangePhone.gif">
+    </div>
+
+    <div class="buttonPane">
+        <button type="button" class="acceptButton" id="acceptcall" ><div><img class="ringingPhone" src="https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png">Accept</div></button>
+        <button type="button" class="acceptButton" id="declinecall"><div><img class ="ringingPhone" src="pics/redPhone.png">Decline</div></button>
+    </div>
+</div>
+<div class="incomingScreen" id="incomingScreen">
+    <div class ="firstLineScreen">
+        <img class="ringingPhone" src="pics/callScreen.gif">
+        Incoming screensharing! 
+        <img class="ringingPhone" src="pics/callScreen.gif">
+    </div>
+
+    <div class="buttonPane">
+        <button type="button" class="acceptButton" id="acceptscreen" onlick="acceptScreenCall()"><div><img class="ringingPhone" src="https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png">Accept</div></button>
+        <button type="button" class="acceptButton" id="declinescreen" onlick="declineScreenCall()"><div><img class ="ringingPhone" src="pics/redPhone.png">Decline</div></button>
+    </div>
+</div>
 <div class="header">OnlineTutor</div>
 <div class="content">
     <div class="contentHeader desktop-12-cols phone-12-cols">
