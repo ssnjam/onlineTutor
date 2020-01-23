@@ -27,6 +27,7 @@ body {
 }
 .headerButton{
 	flex: 20%;
+	font-size: 16px;
 }
 
 .content{
