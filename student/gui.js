@@ -38,6 +38,7 @@ var handlers = {
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
     "send" : send,
+    "popupCall"  : popupCall,
     // add further handlers here
 };
 
@@ -111,6 +112,8 @@ function send(response){
 }
 
 
+
+
 //--------------------------------------------------------------------------------------------------------------
 //Content-Header
 //is false, if there is no current phone connection
@@ -118,12 +121,17 @@ var phoneBool = false;
 
 function setPhonePic(){
     if(phoneBool == false){
-        document.getElementById("phone").src = "pics/redPhone.png";
+        document.getElementById("phone").src = "pics/orangePhone.gif";
+        document.getElementById("chatArea").innerHTML += "calling...<br>";
+        setTimeout(function(){ document.getElementById("chatArea").innerHTML += "call accepted<br>";document.getElementById("phone").src = "pics/redPhone.png";
         document.getElementById("phoneText").innerHTML = "hang up";
-        document.getElementById("phoneButton").style.backgroundColor = "#457fb9";
+        document.getElementById("phoneButton").style.backgroundColor = "#457fb9"; }, 4000);
+        
+        
         phoneBool = true;
     }else{
         document.getElementById("phone").src = "https://cdn4.iconfinder.com/data/icons/social-media-2097/94/phone-512.png";
+        document.getElementById("chatArea").innerHTML += "call ended<br>";
         document.getElementById("phoneText").innerHTML = "call tutor";
         document.getElementById("phoneButton").style.backgroundColor = "#336699";
         phoneBool = false;
@@ -135,12 +143,19 @@ var screenBool = false;
 
 function setScreenPic(){
     if(screenBool == false){
+        document.getElementById("screen").src = "pics/callScreen.gif";
+        document.getElementById("chatArea").innerHTML += "screensharing...<br>";
+        setTimeout(function(){ document.getElementById("chatArea").innerHTML += "screenshare accepted<br>";
+        
+        
+        
         document.getElementById("screen").src = "pics/endScreen.png";
         document.getElementById("screenText").innerHTML = "end screensharing";
         document.getElementById("screenButton").style.backgroundColor = "#457fb9";
-        document.getElementById("vid").src= "pics/test.gif";
+        document.getElementById("vid").src= "pics/test.gif";}, 4000);
         screenBool = true;
     }else{
+        document.getElementById("chatArea").innerHTML += "screenshare ended<br>";
         document.getElementById("screen").src = "https://cdn2.iconfinder.com/data/icons/pittogrammi/142/03-512.png";
         document.getElementById("screenText").innerHTML = "screensharing";
         document.getElementById("screenButton").style.backgroundColor = "#336699";
@@ -211,3 +226,48 @@ function correctTheCode(response){
 	}
 }
 
+function popupCall(response){
+	var state = response.value;
+	if(state == -1){
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("incomingCall").style.display = "block";
+        document.getElementById("acceptcall").onclick = function(){acceptCall()};
+        document.getElementById("declinecall").onclick = function(){declineCall()};
+    }else if(state == 1){
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("incomingScreen").style.display = "block";
+        document.getElementById("acceptscreen").onclick = function(){acceptScreenCall()};
+        document.getElementById("declinescreen").onclick = function(){declineScreenCall()};
+    }
+}
+
+function acceptCall(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("incomingCall").style.display = "none";
+    document.getElementById("phone").src = "pics/redPhone.png";
+    document.getElementById("phoneText").innerHTML = "hang up";
+    document.getElementById("phoneButton").style.backgroundColor = "#457fb9";
+    phoneBool = true;
+}
+
+function declineCall(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("incomingCall").style.display = "none";
+    phoneBool = false;
+}
+
+function acceptScreenCall(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("incomingScreen").style.display = "none";
+    document.getElementById("screen").src = "pics/endScreen.png";
+    document.getElementById("screenText").innerHTML = "end screensharing";
+    document.getElementById("screenButton").style.backgroundColor = "#457fb9";
+    document.getElementById("vid").src= "pics/test.gif"
+    screenBool = true;
+}
+
+function declineScreenCall(){
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("incomingScreen").style.display = "none";
+    screenBool = false;
+}
