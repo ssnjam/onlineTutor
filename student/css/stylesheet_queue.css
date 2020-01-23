@@ -40,6 +40,37 @@ body {
 	transform: translateY(4px);
 }
 
+.dropdown{
+	display: none;
+	position: absolute;
+	left: 15px;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	border-radius: 8px;
+}
+
+.dropdown .btns{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-box{
+	position: right;
+	display: inline-block;
+	border-radius: 8px;
+}
+
+
+.dropdown .btns:hover {background-color: #ddd;}
+
+.dropdown-box:hover .dropdown {display: block;}
+
+.dropdown-box:hover {background-color: #3e8e41;}
+
 .hint {
 	
 	background-color: #dddddd; /* blue*/
@@ -57,7 +88,7 @@ body {
 }
 
 .tooltiptext {
-	content " ";
+	content: " ";
     visibility: hidden;
     background-color: #525050;
     color: #fff;
