@@ -4,17 +4,25 @@
 <title>OnlineTutor</title>
 <link rel="stylesheet" type="text/css" href="css/stylesheet_queueWaiting.css">
 <script>
-setTimeout(function(){ window.location.href="gui.html"; }, 8000);
+setTimeout(function(){ window.location.href="gui.html"; }, 12000);
+setTimeout(function(){
+	var x = document.getElementById("waitingUser");
+	x.innerHTML = "Position in Queue: 13";
+}, 4000);
+setTimeout(function(){
+	var x = document.getElementById("waitingUser");
+	x.innerHTML = "Position in Queue: 10";
+}, 7000);
 </script>
 </head>
 <body>
     <div class="header">OnlineTutor</div>
     <div class="content" >
-		<button class="greyButton" id="play" onclick="window.location.href = 'games.html'">
-			Play
+		<button class="greyButton" id="play" onclick="window.location.href = 'games2.html'">
+			Play while waiting
 		</button>
 		<button class="greyButton" id="leave" onclick="window.location.href = 'queue.html'">
-			Leave
+			Leave queue
 		</button>
 		<div id="gif">
 			<img src="pics/waiting.gif">

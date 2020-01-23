@@ -4,6 +4,10 @@
 <title>OnlineTutor</title>
 <link rel="stylesheet" type="text/css" href="css/stylesheet_queue.css">
 <script>
+var questions = 0;
+var txt = "";
+var counter = 0;
+
 function showDiv() {
 	var x = document.getElementById('checkbox');
 	if (x.style.display == "none") {
@@ -15,10 +19,34 @@ function showDiv() {
 
 function showDiv2() {
 	var x = document.getElementById('askWindow');
+	var y = document.getElementById('numberOfQ');
 	if (x.style.display == "none") {
 		x.style.display = "block";
+		y.style.display = "none";
 	} else {
 		x.style.display = "none";
+		if(y.style.display == "none"){
+			questions++;
+			txt = document.getElementById("question").value;
+			document.getElementById("question").value = "";
+			//console.log(txt);
+			y.style.display = "block";
+			y.innerHTML = "Du hast " + questions + " Kurzfragen gestellt.";
+		}
+	}
+}
+
+function showAnswer(){
+	if(counter > 0){
+		var x = document.getElementById('numberOfQ');
+		x.style.display = "block";
+		x.innerHTML = "Deine Frage: " + txt + "<br><br>Die Antwort: Die Abgaben in Programmieren musst du immer bis donnerstags abends über die Webseite abgeben. Genaue Informationen findest du auf dem Aufgabenblatt.<br>Rudolph Random";
+		questions--;
+	}else{
+		counter++;
+		var x = document.getElementById('numberOfQ');
+		x.style.display = "block";
+		x.innerHTML = "Du hast leider noch keine Antwort auf deine Frage erhalten.";
 	}
 }
 </script>
@@ -29,20 +57,27 @@ function showDiv2() {
 			<button class="greyButton" id="play" onclick="window.location.href = 'games.html'">
 				just play
 			</button>
-			<button class="greyButton" id="ask" onclick="showDiv2()">
-				Kurzfrage
-			</button>
+			<div class="dropdown-box">
+				<button class="greyButton" id="ask">
+					Kurzfrage
+				</button>
+				<div class="dropdown">
+					<div class = "btns" onclick="showDiv2()">Kurzfrage stellen</div>
+					<div class = "btns" onclick="showAnswer()">Anworten ansehen</div>
+				</div>
+			</div>
 			<div id="askWindow" style="display:none;" >
 				Wie lautet deine Frage?<br>
 				<input id="question" type="text" onKeyDown="if(event.keyCode==13) showDiv2();"><br>
 			</div>
+			<div id="numberOfQ" style="display:none;"></div>
 			<button class="blueButton" id="joinQueue" onclick="window.location.href = 'queueWaiting.html'">
 				join Queue
 			</button>
 		<button class="hint">
 			?
 			<span class="tooltiptext">
-				Hier steht ein Text, der den OnlineTutor erklärt.
+				Willkommen beim OnlineTutor. Wenn du Hilfe benötigst klicke hier oder tritt der Queue bei um mit einem Tutor verbunden zu werden!
 			</span>
 		</button>
 		<div id="waitingUser">
@@ -55,7 +90,7 @@ function showDiv2() {
 		<input id="chooseTutor" type="image" src="pics/images.png" onclick="showDiv()"/>
 		<div id="checkbox" style="display:none;" >
 			<div>Choose your tutors:<div/>
-			<input type="checkbox" name="tutor1" checked>Kevin Schumann<br>
+			<input type="checkbox" name="tutor1" checked>Supah Tutor<br>
 			<input type="checkbox" name="tutor2" checked> Rudolph Random<br>
 			<input type="checkbox" name="tutor3" checked>Jakob Jakobs<br><br>
 			<button id="submitCheck" class="greyButton" onclick="showDiv()">submit<br><br>
