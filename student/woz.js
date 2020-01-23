@@ -69,6 +69,7 @@ var handlers = {
 	"terminal" : terminal,
 	"correctTheCode" : correctTheCode,
     "send" : send,
+    "popUpWindows"  : popUpWindows,
     // add further handlers here
 };
 
@@ -92,3 +93,8 @@ function send(response){
     put(response, {"value" : value});
 }
 
+
+function popUpWindows(response){
+    var value = getCheckedRadio("popUpWindows");
+    put(response, {"value" : value});
+}
